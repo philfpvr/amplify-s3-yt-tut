@@ -13,7 +13,7 @@ export const storage = defineStorage((context: any) => {
     overrides: (bucketResource: any, ctx: any) => {
       const existingBucket = s3.Bucket.fromBucketName(
         bucketResource,
-        'fpvr-test2',
+        'mys3bucket',
         'fpvr-test2'
       );
 
