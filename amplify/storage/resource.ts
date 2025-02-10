@@ -4,16 +4,22 @@ import { RemovalPolicy } from 'aws-cdk-lib';
 
 export const storage = defineStorage((context: any) => {
   return {
+    // Alphanumeric, dashes, underscores, or spaces, starting with alpha
     name: 'amp-fpvr-test2',
+
     access: (allow: any) => ({
       '/*': [
         allow.authenticated().to(['read', 'write', 'delete']),
       ],
     }),
+
     overrides: (bucketResource: any, ctx: any) => {
       const existingBucket = s3.Bucket.fromBucketName(
+        // scope
         bucketResource,
-        'mys3bucket',
+        // Construct ID - must be valid: alpha start, only letters/numbers/dashes
+        'MyS3Bucket',
+        // Actual existing bucket name (no extra spaces/dashes)
         'fpvr-test2'
       );
 
