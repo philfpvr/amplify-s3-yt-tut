@@ -10,7 +10,7 @@ const backend = defineBackend({
 
 backend.addOutput({
   storage: {
-    aws_region: "<region>",
-    bucket_name: "<bucket-name>"
+    aws_region: "eu-west-1",
+    bucket_name: "drm-vod-2"
   },
 });
