@@ -1,7 +1,7 @@
 import { defineStorage } from '@aws-amplify/backend';
 
 export const storage = defineStorage({
-  name: 'amp-yt-test',
+  name: 'myS3Bucket',
   access: (allow) => ({
     'public/*': [
       allow.guest.to(['read']),
